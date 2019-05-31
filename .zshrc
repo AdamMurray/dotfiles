@@ -64,6 +64,10 @@ plugins=(
   git
   virtualenv
   virtualenvwrapper
+  colorize
+  node
+  brew
+  osx
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,6 +112,8 @@ alias gs="git status"
 alias gdiff="git diff -- . ':(exclude)yarn.lock'"
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(r) —— %C(bold blue)%an%C(r): %C(white)%s%C(r) %C(dim white) %C(bold green)(%ar)%C(r) %C(bold yellow)%d%C(r)' --all"
 
+alias pcat="pygmentize -f terminal256 -O style=monokai -g"
+
 # Git shell functions
 git() {
   if [[ "$1" = "status" ]]; then
@@ -133,3 +139,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 
 # Googler custom colours
 export GOOGLER_COLORS=ddnxxy
+
+# Include Z
+. ~/z.sh
